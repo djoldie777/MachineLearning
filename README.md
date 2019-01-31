@@ -4,5 +4,5 @@
 2. k-ближайших соседей
 3. Дерево решений
 
-#Dependencies
+# Dependencies
 OpenCV 2.4.10
