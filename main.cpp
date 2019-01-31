@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 
 #include "FormData.h"
 #include <fstream>
@@ -38,15 +38,15 @@ void getData_(int **pixel_matrix, cv::Mat &data, cv::Mat &classes, int samples_c
 
 void multilayerPerceptron(int **training_matrix, int **test_matrix)
 {
-	// матрица, содержащая образцы для обучения
+	// РјР°С‚СЂРёС†Р°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РѕР±СЂР°Р·С†С‹ РґР»СЏ РѕР±СѓС‡РµРЅРёСЏ
 	cv::Mat training_set(TRAINING_SAMPLES, ATTRIBUTES, CV_32F);
-	// матрица, содержащая метки каждого образца для обучения
+	// РјР°С‚СЂРёС†Р°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РјРµС‚РєРё РєР°Р¶РґРѕРіРѕ РѕР±СЂР°Р·С†Р° РґР»СЏ РѕР±СѓС‡РµРЅРёСЏ
 	cv::Mat training_set_classes(TRAINING_SAMPLES, CLASSES, CV_32F);
-	// матрица, содержащая образцы для теста
+	// РјР°С‚СЂРёС†Р°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РѕР±СЂР°Р·С†С‹ РґР»СЏ С‚РµСЃС‚Р°
 	cv::Mat test_set(TEST_SAMPLES, ATTRIBUTES, CV_32F);
-	// матрица, содержащая метки каждого образца для теста
+	// РјР°С‚СЂРёС†Р°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РјРµС‚РєРё РєР°Р¶РґРѕРіРѕ РѕР±СЂР°Р·С†Р° РґР»СЏ С‚РµСЃС‚Р°
 	cv::Mat test_set_classes(TEST_SAMPLES, CLASSES, CV_32F);
-	// матрица, содержащая веса каждого класса
+	// РјР°С‚СЂРёС†Р°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РІРµСЃР° РєР°Р¶РґРѕРіРѕ РєР»Р°СЃСЃР°
 	cv::Mat classification_result(1, CLASSES, CV_32F);
 
 	getData(training_matrix, training_set, training_set_classes, TRAINING_SAMPLES);
@@ -72,7 +72,7 @@ void multilayerPerceptron(int **training_matrix, int **test_matrix)
 		test_sample = test_set.row(i);
 		network.predict(test_sample, classification_result);
 
-		// поиск класса с максимальными весами
+		// РїРѕРёСЃРє РєР»Р°СЃСЃР° СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹РјРё РІРµСЃР°РјРё
 		float max = classification_result.at<float>(0, 0);
 		int maxIndex = 0;
 
